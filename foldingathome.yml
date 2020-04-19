@@ -49,7 +49,7 @@ Mappings:
     us-west-2:
       ImageId: 'ami-0edf3b95e26a682df'
 
-Parameters: 
+Parameters:
   FoldingAtHomeTeam:
     Description: Folding@home team number (default 0 for no team)
     Type: Number
@@ -68,7 +68,7 @@ Parameters:
     Description: VPC for the stack (for example the default VPC 172.31.0.0/16)
     Type: AWS::EC2::VPC::Id
 
-Resources: 
+Resources:
   AutoScalingGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
@@ -91,7 +91,7 @@ Resources:
   LaunchTemplate:
     Type: AWS::EC2::LaunchTemplate
     Properties:
-      LaunchTemplateData: 
+      LaunchTemplateData:
         BlockDeviceMappings:
           - DeviceName: '/dev/sda1'
             Ebs:
@@ -140,7 +140,7 @@ Resources:
             cat<<END >/etc/fahclient/config.xml
             <config>
               <fold-anon v="true"/>
-              <user v="Anonymous"/>
+              <user v="geek404"/>
               <team v="${FoldingAtHomeTeam}"/>
               <passkey v=""/>
               <power v="full"/>
